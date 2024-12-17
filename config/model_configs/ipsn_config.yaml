@@ -1,0 +1,45 @@
+# config/model_configs/ipsn_config.yaml
+```yaml
+model_name: "IPSN"
+model_params:
+  channels: 64
+  interest_point_threshold: 0.1
+  num_feature_points: 1024
+  feature_descriptor_dim: 128
+  detector_params:
+    k: 0.04  # Harris corner parameter
+    sigma: 1.5  # Gaussian smoothing parameter
+    nms_radius: 3  # Non-maximum suppression radius
+
+training:
+  batch_size: 32
+  learning_rate: 0.0001
+  epochs: 200
+  scheduler:
+    type: "step"
+    step_size: 50
+    gamma: 0.5
+  optimizer:
+    type: "adam"
+    weight_decay: 0.00001
+
+loss_weights:
+  image_loss: 1.0
+  message_loss: 0.5
+  feature_loss: 0.2
+  stability_loss: 0.1
+
+data:
+  image_size: 256
+  num_channels: 3
+  augmentation:
+    random_brightness: 0.2
+    random_contrast: 0.2
+    random_saturation: 0.2
+    random_flip: true
+
+metrics:
+  psnr_target: 42.1
+  ssim_target: 0.991
+  recovery_rate_target: 0.93
+```

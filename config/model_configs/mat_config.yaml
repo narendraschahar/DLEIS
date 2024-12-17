@@ -1,0 +1,61 @@
+# config/model_configs/mat_config.yaml
+```yaml
+model_name: "MAT"
+model_params:
+  embed_dim: 256
+  num_heads: 8
+  num_layers: 6
+  mlp_ratio: 4
+  qkv_bias: true
+  dropout: 0.1
+  attention_dropout: 0.1
+  mutual_attention:
+    num_heads: 8
+    head_dim: 32
+    dropout: 0.1
+    gate_temperature: 0.1
+
+training:
+  batch_size: 32
+  learning_rate: 0.0001
+  epochs: 200
+  scheduler:
+    type: "cosine"
+    warmup_epochs: 10
+    min_lr: 0.000001
+  optimizer:
+    type: "adamw"
+    betas: [0.9, 0.999]
+    weight_decay: 0.05
+
+loss_weights:
+  image_loss: 1.0
+  message_loss: 0.5
+  mutual_attention_loss: 0.2
+  consistency_loss: 0.1
+
+data:
+  image_size: 256
+  patch_size: 16
+  num_channels: 3
+  augmentation:
+    random_crop: true
+    color_jitter: true
+    random_flip: true
+    random_erase_prob: 0.1
+
+metrics:
+  psnr_target: 42.9
+  ssim_target: 0.993
+  detection_rate_target: 0.504
+  bpp_target: 4.0
+
+architecture_specific:
+  use_relative_position: true
+  use_global_token: true
+  layer_scale_init_value: 1e-6
+  attention_structure:
+    use_cross_attention: true
+    use_self_attention: true
+    cross_attention_position: "parallel"
+```

@@ -1,0 +1,7 @@
+# config/model_configs/dsa_config.yaml
+```yaml
+model_name: "DSA"
+channels: 64
+num_blocks: 8
+fusion_type: "weighted"
+```

@@ -1,0 +1,9 @@
+# config/model_configs/vitaa_config.yaml
+```yaml
+model_name: "ViT-AA"
+patch_size: 16
+embed_dim: 768
+num_heads: 12
+depth: 12
+dropout: 0.1
+```

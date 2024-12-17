@@ -1,0 +1,8 @@
+# config/model_configs/rdn_config.yaml
+```yaml
+model_name: "RDN"
+num_features: 64
+growth_rate: 32
+num_blocks: 16
+layers_per_block: 8
+```

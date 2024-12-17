@@ -1,0 +1,39 @@
+# config/model_configs/eapt_config.yaml
+```yaml
+model_name: "EAPT"
+model_params:
+  embed_dim: 256
+  num_pyramid_levels: 3
+  num_blocks: 6
+  dropout: 0.1
+
+training:
+  batch_size: 32
+  learning_rate: 0.0001
+  epochs: 200
+  scheduler:
+    type: "cosine"
+    warmup_epochs: 10
+  optimizer:
+    type: "adam"
+    weight_decay: 0.0001
+
+loss_weights:
+  image_loss: 1.0
+  message_loss: 0.5
+  perceptual_loss: 0.1
+
+data:
+  image_size: 256
+  patch_size: 16
+  num_channels: 3
+  augmentation:
+    color_jitter: true
+    random_flip: true
+    random_rotation: true
+
+metrics:
+  psnr_target: 43.0
+  ssim_target: 0.994
+  bpp_target: 4.0
+```

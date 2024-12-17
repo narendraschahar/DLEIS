@@ -1,0 +1,7 @@
+# config/model_configs/whn_config.yaml
+```yaml
+model_name: "WHN"
+num_blocks: 6
+base_channels: 64
+wavelet_type: "haar"
+``

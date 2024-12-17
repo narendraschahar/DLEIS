@@ -1,0 +1,7 @@
+# config/model_configs/pgn_config.yaml
+```yaml
+model_name: "PGN"
+num_stages: 4
+base_channels: 64
+num_blocks_per_stage: 2
+```
