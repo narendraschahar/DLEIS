@@ -25,10 +25,7 @@ data:
         path: "USC-SIPI/misc"
         num_images: 2000
         resolution: "various"
-      custom:
-        path: "Custom/test"
-        num_images: 1000
-        resolution: "various"
+
 
 training:
   batch_size: 32
