@@ -1,4 +1,4 @@
-# Deep Learning-Based Image Steganography Framework
+# Deep Learning-Empowered Image Steganography: Architectural Innovations and Performance Benchmarking
 
 ## Overview
 This framework implements and evaluates multiple state-of-the-art deep learning architectures for image steganography. It includes eight models:
